@@ -87,6 +87,8 @@ export default function Login(props) {
             }
         } catch (err) {
             setLogging(false);
+            const visibilityError = document.getElementById("isError");
+            visibilityError.style.display = "flex";
             console.log('== err: ', err);
         }
     };
@@ -158,7 +160,7 @@ export default function Login(props) {
                                             validate={{
                                                 required: {
                                                     value: true,
-                                                    message: "Mục này không được để trống",
+                                                    message: "Email không được để trống",
                                                 },
                                                 pattern: {
                                                     value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
@@ -174,26 +176,26 @@ export default function Login(props) {
                                             name="password"
                                             placeholder="Nhập mật khẩu"
                                             form={form}
-                                            // validate={{
-                                            //     required: {
-                                            //         value: true,
-                                            //         message: "Mục này không được để trống",
-                                            //     },
-                                            //     minLength: {
-                                            //         value: 1,
-                                            //         message: "Mật khẩu tối thiểu 1 ký tự",
-                                            //     },
-                                            //     validate: {
-                                            //         alphaBetical: (value) =>
-                                            //             /([a-z])/.test(value) ||
-                                            //             "Vui long nhập có ký tự bảng chữ cái(a-z)",
-                                            //         alphaCapital: (value) =>
-                                            //             /([A-Z])/.test(value) ||
-                                            //             "Vui lòng nhập có ký tự bảng chữ cái viết hoa (A-Z)",
-                                            //         numberic: (value) =>
-                                            //             /([0-9])/.test(value) || "Vui lòng nhập có số (0-9)",
-                                            //     },
-                                            // }}
+                                            validate={{
+                                                required: {
+                                                    value: true,
+                                                    message: "Mật khẩu không được để trống",
+                                                },
+                                                minLength: {
+                                                    value: 1,
+                                                    message: "Mật khẩu tối thiểu 1 ký tự",
+                                                },
+                                                // validate: {
+                                                //     alphaBetical: (value) =>
+                                                //         /([a-z])/.test(value) ||
+                                                //         "Vui long nhập có ký tự bảng chữ cái(a-z)",
+                                                //     alphaCapital: (value) =>
+                                                //         /([A-Z])/.test(value) ||
+                                                //         "Vui lòng nhập có ký tự bảng chữ cái viết hoa (A-Z)",
+                                                //     numberic: (value) =>
+                                                //         /([0-9])/.test(value) || "Vui lòng nhập có số (0-9)",
+                                                // },
+                                            }}
                                         />
                                     </div>
                                     <div className="d-flex justify-content-between authlogin-left__form-content-checkbox" style={{ marginBottom: 10 }}>
@@ -204,7 +206,9 @@ export default function Login(props) {
                                     <div className="authlogin-left__form-content-checkbox" style={{ fontSize: "14px" }}>
                                         Bằng việc tiếp tục, bạn đồng ý với  <Link to={"/terms-conditions"} style={{ fontSize: "13px" }}>Điều khoản dịch vụ</Link> và <Link to={"/privacy-policy"} style={{ fontSize: "13px" }}>Chính sách quyền riêng tư</Link>, bao gồm việc sử dụng <Link to={"/cookies-policy"} style={{ fontSize: "13px" }}>Cookies.</Link>
                                     </div>
-
+                                    <div id="isError" style={{display: 'none', color: 'red', alignContent:'center', justifyContent: 'center'}}>
+                                        Tài khoản hoặc mật khẩu không đúng
+                                    </div>
                                     <FormGroup>
                                         <Button
                                             className="form__button"
