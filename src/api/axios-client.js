@@ -2,6 +2,7 @@
 "use strict";
 import axios from "axios";
 import Config from "../config";
+// const axios = require('axios');
 
 const baseURL = process.env.REACT_APP_API_URL;
 const platform = process.env.REACT_APP_PLATFORM || "WEB";

@@ -18,7 +18,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
-import { ButtonAvatar, ButtonIcon, Input } from "../../components";
+import { ButtonAvatar, Input } from "../../components";
 
 /************************************************************************/
 /*   Import for project component use ./ or ../ first                   */

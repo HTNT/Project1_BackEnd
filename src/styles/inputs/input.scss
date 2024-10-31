@@ -185,17 +185,16 @@ input[type="time"]::-webkit-calendar-picker-indicator {
         border: 1px solid var(--neutral-default-n-4);
 
         &__text {
+            color: var(--neutral-default-n-4);
+            background-color: var(--neutral-default-n-0);
             &-box {
+                // color: var(--neutral-default-n-4);
                 background-color: transparent;
                 border: 0;
-                // color: var(--neutral-default-n-4);
             }
             &::placeholder {
                 color: var(--neutral-default-n-4);
             }
-
-            color: var(--neutral-default-n-4);
-            background-color: var(--neutral-default-n-0);
         }
 
         &__label,
